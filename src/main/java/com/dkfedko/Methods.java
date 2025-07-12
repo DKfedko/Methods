@@ -70,6 +70,7 @@ public class Methods {
     public static void printHelloWorld() {
         System.out.println("hello world");
     }
+
     public static void displayResult(char[] name){
         for (int i = 0; i < name.length; i++) {
             System.out.println(name[i]);

@@ -1,3 +1,5 @@
+package main.java.com.dkfedko;
+
 import java.util.Arrays;
 
 public class Methods {

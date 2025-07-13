@@ -167,4 +167,50 @@ class MethodsTest {
         //assert
         assertArrayEquals(expected, actual);
     }
+    @Test
+
+    void  TestShouldCheckIfThereIsEqualValue(){
+
+        //arrange
+        int[] truckUnits = new int[]{1022, 1035, 1048, 1057, 1047, 1064, 1032};
+        int value = 1048;
+
+        int expected = 2;
+
+        //act
+        int actual = methods.getIndexOf(truckUnits, value);
+
+        //assert
+        assertEquals(expected, actual);
+    }
+    @Test
+
+    void  TestShouldReturnMinusOneifValleNotExists(){
+
+        //arrange
+        int[] truckUnits = new int[]{1022, 1035, 1048, 1057, 1047, 1064, 1032};
+        int value = 1053;
+
+        int expected = -1;
+
+        //act
+        int actual = methods.getLastIndexOf(truckUnits, value);
+
+        //assert
+        assertEquals(expected, actual);
+    }
+    @Test
+
+    void TestShouldReturnFactorialValue(){
+
+        //arrange
+        int value = 5;
+        long expected = 120;
+
+        //act
+        long actual = methods.recursiveFactorial(value);
+
+        //assert
+        assertEquals(expected, actual);
+    }
 }

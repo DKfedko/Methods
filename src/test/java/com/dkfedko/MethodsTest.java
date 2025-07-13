@@ -14,15 +14,15 @@ class MethodsTest {
     private Methods methods = new Methods();
 
     @Test
-    void TestShouldPrintArrayElements() {
+    void testShouldPrintArrayElements() {
         //arrange
         char[] symbols = new char[]{'D', 'a', 'n', 'y', 'l', 'o'};
         String expectedOutput = "D\n" +
-                                "a\n" +
-                                "n\n" +
-                                "y\n" +
-                                "l\n" +
-                                "o\n";
+                "a\n" +
+                "n\n" +
+                "y\n" +
+                "l\n" +
+                "o\n";
 
         // capture System.out
         PrintStream originalOut = System.out;
@@ -30,7 +30,7 @@ class MethodsTest {
         System.setOut(new PrintStream(outContent));
 
         // act
-        methods.displayResult(symbols);
+        Methods.displayResult(symbols);
 
         // restore System.out
         System.setOut(originalOut);
@@ -40,11 +40,11 @@ class MethodsTest {
     }
 
     @Test
-    void TestShouldConvertIntToChar() {
+    void testShouldConvertIntToChar() {
 
         //arrange
         int[] java = new int[]{106, 97, 118, 97};
-        char[] expected= {'j', 'a', 'v', 'a'};
+        char[] expected = {'j', 'a', 'v', 'a'};
 
         //act
         char[] actual = Methods.displayResult(java);
@@ -54,7 +54,7 @@ class MethodsTest {
     }
 
     @Test
-    void TestShouldReturnMaxOfTwoInt() {
+    void testShouldReturnMaxOfTwoInt() {
 
         //arrange
         int a = 5;
@@ -62,14 +62,14 @@ class MethodsTest {
         int expected = 6;
 
         //act
-        int actual = methods.maxOfTwo(a, b);
+        int actual = Methods.maxOfTwo(a, b);
 
         //asset
         assertEquals(expected, actual);
     }
 
     @Test
-    void TestShouldReturnMaxOfThree(){
+    void testShouldReturnMaxOfThree() {
 
         //arrange
         int a = 3;
@@ -78,42 +78,42 @@ class MethodsTest {
         int actual = 8;
 
         //act
-        int expected = methods.maxOfThree(a,b,c);
+        int expected = Methods.maxOfThree(a, b, c);
 
         //assert
         assertEquals(actual, expected);
     }
+
     @Test
-    void TestShouldReturnMaxOfFive(){
+    void testShouldReturnMaxOfFive() {
 
         //arrange
         int size = 18;
         int topEdge = 16;
         int bottomEdge = 3;
-        int length =12;
+        int length = 12;
         int weight = 74;
 
         int actual = 74;
 
         //act
-        int expected = methods.maxOfFive(size, topEdge, bottomEdge, length, weight);
+        int expected = Methods.maxOfFive(size, topEdge, bottomEdge, length, weight);
 
         //assert
-        assertEquals(expected, actual);
+        assertEquals(actual, expected);
     }
 
     @Test
-
-    void TestShouldPrintCharBackwards(){
+    void testShouldPrintCharBackwards() {
 
         //arrange
-        char[] name = new char[] {'D','a','n','y','l','o'};
+        char[] name = new char[]{'D', 'a', 'n', 'y', 'l', 'o'};
         String expectedOutput = "o\n" +
-                                "l\n" +
-                                "y\n" +
-                                "n\n" +
-                                "a\n" +
-                                "D\n";
+                "l\n" +
+                "y\n" +
+                "n\n" +
+                "a\n" +
+                "D\n";
 
         // capture System.out
         PrintStream originalOut = System.out;
@@ -121,7 +121,7 @@ class MethodsTest {
         System.setOut(new PrintStream(outContent));
 
         //act
-        methods.reversChar(name);
+        Methods.reversChar(name);
 
         // restore System.out
         System.setOut(originalOut);
@@ -129,23 +129,24 @@ class MethodsTest {
         //assert
         assertEquals(expectedOutput, outContent.toString());
     }
+
     @Test
-    void TestShouldPrintNestedLoops(){
+    void testShouldPrintNestedLoops() {
 
-    String expectedOutPut =
-            "*****\n" +
-            "****\n" +
-            "***\n" +
-            "**\n" +
-            "*\n";
+        String expectedOutPut =
+                "*****\n" +
+                        "****\n" +
+                        "***\n" +
+                        "**\n" +
+                        "*\n";
 
-     //capture System.out
+        //capture System.out
         PrintStream originalOut = System.out;
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
 
         //act
-        methods.showLoop();
+        Methods.showLoop();
 
         //restore System.out
         System.setOut(originalOut);
@@ -153,23 +154,23 @@ class MethodsTest {
         //assert
         assertEquals(expectedOutPut, outContent.toString());
     }
-    @Test
 
-    void TestShouldFindEvenSymbolsInArray(){
+    @Test
+    void testShouldFindEvenSymbolsInArray() {
 
         //arrange
         int[] truckUnits = new int[]{1022, 1035, 1047, 1064, 1032};
         int[] expected = {1022, 0, 0, 1064, 1032};
 
         //act
-        int[] actual = methods.revealEven(truckUnits);
+        int[] actual = Methods.revealEven(truckUnits);
 
         //assert
         assertArrayEquals(expected, actual);
     }
-    @Test
 
-    void  TestShouldCheckIfThereIsEqualValue(){
+    @Test
+    void testShouldCheckIfThereIsEqualValue() {
 
         //arrange
         int[] truckUnits = new int[]{1022, 1035, 1048, 1057, 1047, 1064, 1032};
@@ -178,14 +179,14 @@ class MethodsTest {
         int expected = 2;
 
         //act
-        int actual = methods.getIndexOf(truckUnits, value);
+        int actual = Methods.getIndexOf(truckUnits, value);
 
         //assert
         assertEquals(expected, actual);
     }
-    @Test
 
-    void  TestShouldReturnMinusOneifValleNotExists(){
+    @Test
+    void testShouldReturnMinusOneifValleNotExists() {
 
         //arrange
         int[] truckUnits = new int[]{1022, 1035, 1048, 1057, 1047, 1064, 1032};
@@ -194,23 +195,52 @@ class MethodsTest {
         int expected = -1;
 
         //act
-        int actual = methods.getLastIndexOf(truckUnits, value);
+        int actual = Methods.getLastIndexOf(truckUnits, value);
 
         //assert
         assertEquals(expected, actual);
     }
-    @Test
 
-    void TestShouldReturnFactorialValue(){
+    @Test
+    void testShouldReturnFactorialValue() {
 
         //arrange
         int value = 5;
         long expected = 120;
 
         //act
-        long actual = methods.recursiveFactorial(value);
+        long actual = Methods.recursiveFactorial(value);
 
         //assert
         assertEquals(expected, actual);
+    }
+
+    @Test
+    void testFibonacciValue() {
+
+        //arrange
+        int value = 8;
+        int expected = 21;
+
+        //act
+        int actual = Methods.getFiboValeu(value);
+
+        //assert
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void testShouldCheckIfThereIsArrayThatEqualValle() {
+
+        //arrange
+        int[] array = new int[]{1, 2, 3, 15};
+        int value = 4;
+        int[] expected = {0, 0, 0, 0};
+        
+    //act
+    int[] actual = Methods.getArrayEqualValue(array, value);
+
+    //assert
+    assertArrayEquals(expected, actual);
     }
 }

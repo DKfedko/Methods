@@ -23,6 +23,7 @@ public class Methods {
         System.out.println(intToChar);
 
         reversChar(symbols);
+
         int [] even = revealEven(truckUnits);
         showEven(even);
 

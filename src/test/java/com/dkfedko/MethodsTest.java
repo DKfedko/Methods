@@ -1,6 +1,5 @@
 package com.dkfedko;
 
-
 import org.junit.jupiter.api.Test;
 import main.java.com.dkfedko.Methods;
 
@@ -18,11 +17,11 @@ class MethodsTest {
         //arrange
         char[] symbols = new char[]{'D', 'a', 'n', 'y', 'l', 'o'};
         String expectedOutput = "D\n" +
-                "a\n" +
-                "n\n" +
-                "y\n" +
-                "l\n" +
-                "o\n";
+                                "a\n" +
+                                "n\n" +
+                                "y\n" +
+                                "l\n" +
+                                "o\n";
 
         // capture System.out
         PrintStream originalOut = System.out;
@@ -44,13 +43,13 @@ class MethodsTest {
 
         //arrange
         int[] java = new int[]{106, 97, 118, 97};
-        char[] expectedCharArray = {'j', 'a', 'v', 'a'};
+        char[] expected= {'j', 'a', 'v', 'a'};
 
         //act
-        char[] actualCharArray = methods.displayResult(java);
+        char[] actual = Methods.displayResult(java);
 
         //assert
-        assertArrayEquals(expectedCharArray, actualCharArray);
+        assertArrayEquals(expected, actual);
     }
 
     @Test
@@ -59,13 +58,13 @@ class MethodsTest {
         //arrange
         int a = 5;
         int b = 6;
-        int actual = 6;
+        int expected = 6;
 
         //act
-        int expected = methods.maxOfTwo(a, b);
+        int actual = methods.maxOfTwo(a, b);
 
         //asset
-        assertEquals(actual, expected);
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -101,4 +100,34 @@ class MethodsTest {
         //assert
         assertEquals(expected, actual);
     }
+
+    @Test
+
+    void shouldPrintCharBackwards(){
+
+        //arrange
+        char[] name = new char[] {'D','a','n','y','l','o'};
+        String expectedOutput = "o\n" +
+                                "l\n" +
+                                "y\n" +
+                                "n\n" +
+                                "a\n" +
+                                "D\n";
+
+        // capture System.out
+        PrintStream originalOut = System.out;
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+
+        //act
+        methods.reversChar(name);
+
+        // restore System.out
+        System.setOut(originalOut);
+
+        //assert
+        assertEquals(expectedOutput, outContent.toString());
+    }
+
+    
 }

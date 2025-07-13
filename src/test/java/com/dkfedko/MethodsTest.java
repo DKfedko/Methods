@@ -1,7 +1,8 @@
 package com.dkfedko;
 
-import org.junit.jupiter.api.Test;
 import main.java.com.dkfedko.Methods;
+
+import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -13,7 +14,7 @@ class MethodsTest {
     private Methods methods = new Methods();
 
     @Test
-    void shouldPrintArrayElements() {
+    void TestShouldPrintArrayElements() {
         //arrange
         char[] symbols = new char[]{'D', 'a', 'n', 'y', 'l', 'o'};
         String expectedOutput = "D\n" +
@@ -39,7 +40,7 @@ class MethodsTest {
     }
 
     @Test
-    void shouldConvertIntToChar() {
+    void TestShouldConvertIntToChar() {
 
         //arrange
         int[] java = new int[]{106, 97, 118, 97};
@@ -53,7 +54,7 @@ class MethodsTest {
     }
 
     @Test
-    void shouldReturnMaxOfTwoInt() {
+    void TestShouldReturnMaxOfTwoInt() {
 
         //arrange
         int a = 5;
@@ -68,7 +69,7 @@ class MethodsTest {
     }
 
     @Test
-    void shouldReturnMaxOfThree(){
+    void TestShouldReturnMaxOfThree(){
 
         //arrange
         int a = 3;
@@ -83,7 +84,7 @@ class MethodsTest {
         assertEquals(actual, expected);
     }
     @Test
-    void shouldReturnMaxOfFive(){
+    void TestShouldReturnMaxOfFive(){
 
         //arrange
         int size = 18;
@@ -103,7 +104,7 @@ class MethodsTest {
 
     @Test
 
-    void shouldPrintCharBackwards(){
+    void TestShouldPrintCharBackwards(){
 
         //arrange
         char[] name = new char[] {'D','a','n','y','l','o'};
@@ -128,6 +129,42 @@ class MethodsTest {
         //assert
         assertEquals(expectedOutput, outContent.toString());
     }
+    @Test
+    void TestShouldPrintNestedLoops(){
 
-    
+    String expectedOutPut =
+            "*****\n" +
+            "****\n" +
+            "***\n" +
+            "**\n" +
+            "*\n";
+
+     //capture System.out
+        PrintStream originalOut = System.out;
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+
+        //act
+        methods.showLoop();
+
+        //restore System.out
+        System.setOut(originalOut);
+
+        //assert
+        assertEquals(expectedOutPut, outContent.toString());
+    }
+    @Test
+
+    void TestShouldFindEvenSymbolsInArray(){
+
+        //arrange
+        int[] truckUnits = new int[]{1022, 1035, 1047, 1064, 1032};
+        int[] expected = {1022, 0, 0, 1064, 1032};
+
+        //act
+        int[] actual = methods.revealEven(truckUnits);
+
+        //assert
+        assertArrayEquals(expected, actual);
+    }
 }

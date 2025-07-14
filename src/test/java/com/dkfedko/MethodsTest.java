@@ -223,24 +223,64 @@ class MethodsTest {
         int expected = 21;
 
         //act
-        int actual = Methods.getFiboValeu(value);
+        int actual = Methods.getFibonacciValue(value);
 
         //assert
         assertEquals(expected, actual);
     }
 
     @Test
-    void testShouldCheckIfThereIsArrayThatEqualValle() {
+    void testShouldCheckIfThereIsSymbolsThatDivideByValle() {
 
         //arrange
         int[] array = new int[]{1, 2, 3, 15};
-        int value = 4;
-        int[] expected = {0, 0, 0, 0};
-        
-    //act
-    int[] actual = Methods.getArrayEqualValue(array, value);
+        int value = 3;
+        int[] expected = {0, 0, 3, 15};
 
-    //assert
-    assertArrayEquals(expected, actual);
+        //act
+        int[] actual = Methods.getArrayDivideValue(array, value);
+
+        //assert
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    void testShouldPrintResultOfMethodThatCheckIfThereIsSymbolsThatDividedByValle() {
+
+        //arrange
+        int[] array = new int[]{1, 2, 3, 15};
+        String expectedOutout ="1\n" +
+                "2\n" +
+                "3\n" +
+                "15\n";
+        //capture System.out
+        PrintStream originalOut = System.out;
+        ByteArrayOutputStream outputContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputContent));
+
+        //act
+        Methods.showNumbsEqualValue(array);
+
+        //restore System.out
+        System.setOut(originalOut);
+
+        //assert
+        assertEquals(expectedOutout, outputContent.toString());
+
+    }
+
+    @Test
+    void testShouldCheckMethodToMultiplyArrays() {
+
+        //arrange
+        int[] truckUnits = new int[]{2, 3, 8, 4, -5, -3};
+        int [] digits = new int [] {16, 8, 4, 2, -2, 2};
+        int[] expected = {32, 24, 32, 8, 10, -6};
+
+        //act
+        int [] actual = Methods.getMultipliedArray (truckUnits, digits);
+
+        //assert
+        assertArrayEquals(expected, actual);
     }
 }

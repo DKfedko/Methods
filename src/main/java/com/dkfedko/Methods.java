@@ -27,10 +27,10 @@ public class Methods {
         int [] even = revealEven(truckUnits);
         showEven(even);
 
-        int[] equalValue = getArrayEqualValue(truckUnits, topEdge);
-        showNumbsEqualValeu(equalValue);
+        int[] equalValue = getArrayDivideValue(truckUnits, topEdge);
+        showNumbsEqualValue(equalValue);
 
-        int fibo = getFiboValeu(bottomEdge);
+        int fibo = getFibonacciValue(bottomEdge);
         System.out.println(fibo);
 
         showLoop();
@@ -147,16 +147,16 @@ public class Methods {
         if (value == 1) return 1;
         return value * recursiveFactorial(value - 1);
     }
-    public static int getFiboValeu (int value){
+    public static int getFibonacciValue(int value){
         if (value==0){
             return 0;
         }if (value==1){
             return 1;
         }else{
-            return getFiboValeu(value-2)+getFiboValeu(value-1);
+            return getFibonacciValue(value-2)+getFibonacciValue(value-1);
         }
     }
-    public static int[] getArrayEqualValue(int[] array, int value){
+    public static int[] getArrayDivideValue(int[] array, int value){
         int[] result = new int[array.length];
         for (int i=0; i<array.length; i++){
             if (array[i] % value == 0){
@@ -165,7 +165,7 @@ public class Methods {
         }
         return result;
     }
-    public static void showNumbsEqualValeu (int[] array){
+    public static void showNumbsEqualValue (int[] array){
         for (int i=0; i<array.length; i++){
             System.out.println(array[i]);
         }

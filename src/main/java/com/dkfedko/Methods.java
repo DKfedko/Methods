@@ -192,7 +192,7 @@ public class Methods {
         }
         return false;
     }
-    public static void bubbleSort(int[] trucksArray) {
+    public static int[] bubbleSort(int[] trucksArray) {
         for (int i = 0; i < trucksArray.length - 1; i++) {
             for (int j = 0; j < trucksArray.length - i - 1; j++) {
                 if (trucksArray[j] > trucksArray[j + 1]) {
@@ -202,5 +202,6 @@ public class Methods {
                 }
             }
         }
+        return trucksArray;
     }
 }

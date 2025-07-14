@@ -283,4 +283,32 @@ class MethodsTest {
         //assert
         assertArrayEquals(expected, actual);
     }
+
+    @Test
+    void testShouldCheckIfElementInArrayRepeats(){
+
+        //arrange
+        byte[] array  =new byte[] {21,5,8,9,4,8,9,6};
+        boolean expected  = true;
+
+        //act
+        boolean actual = Methods.ifElementsRepeat(array);
+
+        //assert
+        assertEquals(expected,actual);
+    }
+    @Test
+    void testShouldCheckBubbleSortMethods(){
+
+        //arrange
+        int[] array  = new int[] {9,8,7,6,5,4,3,2,1};
+        int [] expected = {1,2,3,4,5,6,7,8,9};
+
+        //act
+        int[] actual = Methods.bubbleSort(array);
+
+        //assert
+        assertArrayEquals(expected,actual);
+    }
+
 }

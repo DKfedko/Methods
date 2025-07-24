@@ -171,7 +171,7 @@ class MethodsTest {
         int[] expected = {32, 24, 32, 8, 10, -6};
 
         //act
-        int [] actual = Methods.getMultipliedArray (truckUnits, digits);
+        int [] actual = methods.getMultipliedArray (truckUnits, digits);
 
         //assert
         assertArrayEquals(expected, actual);

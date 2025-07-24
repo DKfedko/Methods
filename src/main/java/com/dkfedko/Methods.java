@@ -1,73 +1,7 @@
 package main.java.com.dkfedko;
 
-import java.util.Arrays;
-
 public class Methods {
-    public static void main(String[] args) {
 
-        printHelloWorld();
-        byte[] colorIndex = new byte[]{101, 102, 103, 101, 105, 103, 105, 104, 108, 109};
-        int[] truckUnits = new int[]{1022, 1035, 1047, 1064, 1032};
-        int [] digits = new int [] {11,12,14,16,10,2};
-        int size = 18;
-        int topEdge = 16;
-        int bottomEdge = 3;
-        int length =12;
-        int weight = 74;
-
-        char[] symbols = new char[] {'D','a','n','y','l','o'};
-        displayResult(symbols);
-
-        int[] java = new int [] {106, 97, 118, 97};
-        char[] intToChar = displayResult(java);
-        System.out.println(intToChar);
-
-        reversChar(symbols);
-
-        int [] even = revealEven(truckUnits);
-        showEven(even);
-
-        int[] equalValue = getArrayDivideValue(truckUnits, topEdge);
-        showNumbsEqualValue(equalValue);
-
-        int fibo = getFibonacciValue(bottomEdge);
-        System.out.println(fibo);
-
-        showLoop();
-
-        int lastIndexOf = getLastIndexOf(truckUnits, length);
-        System.out.println(lastIndexOf);
-
-        long factorial = getValueFactorial(bottomEdge);
-        System.out.println(factorial);
-
-        long n = recursiveFactorial(size);
-        System.out.println(n);
-
-        int indexOf = getIndexOf(truckUnits, length);
-        System.out.println(indexOf);
-
-        int[] multipliedArrays = getMultipliedArray(truckUnits, digits);
-        showMultipliedArrays(multipliedArrays);
-
-        int max = maxOfTwo(size, topEdge);
-        System.out.println(max);
-        max = maxOfThree(size,topEdge,bottomEdge);
-        System.out.println(max);
-        max = maxOfFive(size, topEdge, bottomEdge, length, weight);
-        System.out.println(max);
-
-        boolean ifRepeatValue = ifElementsRepeat(colorIndex);
-        System.out.println(ifRepeatValue);
-//java build sort methods
-        Arrays.sort(truckUnits);
-        System.out.println(Arrays.toString(truckUnits));
-//bubbleSort method
-        bubbleSort(truckUnits);
-        for (int i = 0; i < truckUnits.length; i++) {
-            System.out.println(truckUnits[i]);
-        }
-    }
     public static void printHelloWorld() {
         System.out.println("hello world");
     }

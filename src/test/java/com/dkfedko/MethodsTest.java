@@ -4,8 +4,7 @@ import main.java.com.dkfedko.Methods;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 class MethodsTest {
     private Methods methods = new Methods();
@@ -182,13 +181,12 @@ class MethodsTest {
 
         //arrange
         byte[] array  =new byte[] {21,5,8,9,4,8,9,6};
-        boolean expected  = true;
 
         //act
-        boolean actual = methods.ifElementsRepeat(array);
+        boolean result = methods.ifElementsRepeat(array);
 
         //assert
-        assertEquals(expected,actual);
+        assertTrue(result);
     }
     @Test
     void testShouldCheckBubbleSortMethods(){
